@@ -60,16 +60,32 @@ def save_to_excel(data, output_file):
 
     # Dados
     for entry in data:
-        carga_horaria_numero = float(entry['carga_horaria'].replace('.', '').replace(',', '.'))
-        coeficiente_rendimento_numero = float(entry['coeficiente_rendimento'].replace('.', '').replace(',', '.'))
+        carga_horaria_numero = -1
+        coeficiente_rendimento_numero = -1
+
+        if entry['carga_horaria'] is not None:
+            carga_horaria_numero = float(entry['carga_horaria'].replace('.', '').replace(',', '.'))
+        
+        if entry['coeficiente_rendimento'] is not None:
+            coeficiente_rendimento_numero = float(entry['coeficiente_rendimento'].replace('.', '').replace(',', '.'))
+        
         sheet.append([entry['nome_aluno'], carga_horaria_numero, coeficiente_rendimento_numero])
 
     workbook.save(output_file)
 
 # Função principal
 def main():
-    folder_id = '1WJGqZUjhr5ZoQs-3Dqe-7JlFtTukQ_D8tmfb-1EfS0tyPzzO_nSnn-MhCe9YtW3HCeIB0Faq'
-    output_file = 'dados_alunos.xlsx'
+    
+    # REBONE
+    #folder_id = '1WJGqZUjhr5ZoQs-3Dqe-7JlFtTukQ_D8tmfb-1EfS0tyPzzO_nSnn-MhCe9YtW3HCeIB0Faq'
+    
+    # DE OLHO NO PÉ
+    #folder_id = '163FK_PByK-LXg3TVAg-X-Ae_2Uw_PlwGEbFYHRJlcj-MMJHWjqcRJXukEbeXVcv6aDsGEnGG'
+
+    # Purple
+    folder_id = '104GYe1O-Z2klxvQkox95LlJ9ESIy48ANqGN84yr4IQzjAyNVrfyVT0vhoMok-yzTzRfp4qOR'
+
+    output_file = 'saida/dados_alunos.xlsx'
 
     # Lista de PDFs na pasta do Google Drive
     pdf_files = list_pdfs_in_drive_folder(folder_id)
