@@ -75,15 +75,8 @@ def save_to_excel(data, output_file):
 
 # Função principal
 def main():
-    
-    # REBONE
-    #folder_id = '1WJGqZUjhr5ZoQs-3Dqe-7JlFtTukQ_D8tmfb-1EfS0tyPzzO_nSnn-MhCe9YtW3HCeIB0Faq'
-    
-    # DE OLHO NO PÉ
-    #folder_id = '163FK_PByK-LXg3TVAg-X-Ae_2Uw_PlwGEbFYHRJlcj-MMJHWjqcRJXukEbeXVcv6aDsGEnGG'
-
     # Purple
-    folder_id = '104GYe1O-Z2klxvQkox95LlJ9ESIy48ANqGN84yr4IQzjAyNVrfyVT0vhoMok-yzTzRfp4qOR'
+    folder_id = '<<<hash_do_diretorio>>>'
 
     output_file = 'saida/dados_alunos.xlsx'
 
